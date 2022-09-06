@@ -10,7 +10,7 @@ Supports Powershell 7.
 - Run `iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1'))` in your powershell.
 - Choose option from menu.
 
-<img src=".github/assets/wt.png" alt="img" align="right" width="650px">
+<img src=".github/assets/wt.png" alt="img" align="right" width="600px">
 
 ### Features
 
@@ -20,4 +20,4 @@ Supports Powershell 7.
 ### Requirements
 
 - Powershell 7.
-- Docker Desktop
+- Docker Desktop.
