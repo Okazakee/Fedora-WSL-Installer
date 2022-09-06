@@ -34,16 +34,6 @@ function Bye-Message {
     return
 }
 
-function Clear-Tmp {
-    $FileName = "$env:temp\script.ps1"
-    if (Test-Path $FileName) {
-    Remove-Item $FileName
-    Bye-Message
-} else {
-    Bye-Message
-}
-}
-
 function Install-Wsl {
 
     $WSLname = Read-Host "Choose a name for the WSL (no uppercase)"
@@ -112,7 +102,6 @@ function Set-Icon {
     Clear-Host
     Write-Host "Done!"
     sleep 1
-    Clear-Tmp
 }
 
 Show-Menu
@@ -123,7 +112,6 @@ Show-Menu
     } '2' {
         Set-Icon
     } 'q' {
-        Clear-Tmp
         return
     } default {
         Write-Host "Please choose one of the given inputs!"
