@@ -8,7 +8,7 @@ function Show-Menu
     Write-Host "    / ____/__  ____/ /___  _________ _" -ForegroundColor Cyan -NoNewline; Write-Host "  | |     / / ___// /      (_)___  _____/ /_____ _/ / /__  _____"
     Write-Host "   / /_  / _ \/ __  / __ \/ ___/ __ '/" -ForegroundColor Cyan -NoNewline; Write-Host "  | | /| / /\__ \/ /      / / __ \/ ___/ __/ __ '/ / / _ \/ ___/"
     Write-Host "  / __/ /  __/ /_/ / /_/ / /  / /_/ / " -ForegroundColor Cyan -NoNewline; Write-Host "  | |/ |/ /___/ / /___   / / / / (__  ) /_/ /_/ / / /  __/ /    "
-    Write-Host " /_/    \___/\__,_/\____/_/   \__,_/  " -ForegroundColor Cyan -NoNewline; Write-Host "  |__/|__//____/_____/  /_/_/ /_/____/\__/\__,_/_/_/\___/_/     "
+    Write-Host " /_/    \___/\__,_/\____/_/   \__,_/  " -ForegroundColor Cyan -NoNewline; Write-Host "  |__/|__//____/_____/  /_/_/ /_/____/\__/\__,_/_/_/\___/_/     v1.0"
     Write-Host ""
     Write-Host ""
     Write-Host "                        This script lets you install Fedora as a WSL using Docker!"
