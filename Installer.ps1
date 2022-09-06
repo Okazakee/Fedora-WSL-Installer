@@ -1,4 +1,4 @@
-<# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/FedoraToWSL/main/install_fedora_wsl.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
+<# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/install_fedora_wsl.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
 <# TODO: ASK FOR PATH AGAIN IN ICON SET FUNCTION #>
 Clear-Host
 function Show-Menu
@@ -15,7 +15,7 @@ function Show-Menu
     Write-Host ""
     Write-Host "                            Remember to open Docker Desktop before installing!" -ForegroundColor Red
     Write-Host ""
-    Write-Host "                        For more info visit: https://github.com/Okazakee/FedoraToWSL"
+    Write-Host "                        For more info visit: https://github.com/Okazakee/Fedora-WSL-Installer"
     Write-Host ""
     Write-Host "1) Install Fedora WSL."
     Write-Host "2) Set the new WSL Windows Terminal profile icon to Fedora logo."
@@ -54,7 +54,7 @@ function Install-Wsl {
     Write-Host "============================================================"
 
     Write-Host "Downloading Dockerfile..."
-    $dockerURL = 'https://raw.githubusercontent.com/Okazakee/FedoraToWSL/main/Dockerfile'
+    $dockerURL = 'https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Dockerfile'
     $dockerfiletmp = (Invoke-webrequest -URI $dockerURL).Content | Out-File -FilePath $InstallPath\Dockerfile
     Write-Host "Building docker container..."
     $ContainerName = "docker_to_wsl_$WSLname"
@@ -96,7 +96,7 @@ function Set-Icon {
     Write-Host "                    Setting Fedora icon..."
     Write-Host "============================================================"
 
-    $icoURL = 'https://raw.githubusercontent.com/Okazakee/FedoraToWSL/main/fedora.ico'
+    $icoURL = 'https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/fedora.ico'
     Invoke-WebRequest -Uri $icoURL -OutFile $InstallPath\fedora.ico
 
     $settings = Get-Content $env:localappdata'\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' -raw | ConvertFrom-Json
