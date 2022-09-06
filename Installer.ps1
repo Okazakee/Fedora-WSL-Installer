@@ -1,5 +1,5 @@
 <# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
-<# TODO: ASK FOR PATH AGAIN IN ICON SET FUNCTION #>
+<# TODO: save variables in a file to be reused in icon setting function #>
 Clear-Host
 function Show-Menu
 {
@@ -90,7 +90,8 @@ function Install-Wsl {
 
 function Set-Icon {
 
-    $InstallPath = Read-Host "Set the path where you have installed the WSL"
+    $Wslname = Read-Host "How did you call the WSL?"
+    $InstallPath = Read-Host "Where did you installed the WSL?"
 
     Write-Host "============================================================"
     Write-Host "                    Setting Fedora icon..."
