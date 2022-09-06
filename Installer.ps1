@@ -1,4 +1,4 @@
-<# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
+<# one command install: iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1')) #>
 <# TODO: save variables in a file to be reused in icon setting function #>
 Clear-Host
 function Show-Menu
@@ -49,6 +49,7 @@ function Install-Wsl {
     $InstallPath = Read-Host "Choose a path to where will be WSL installed"
     $UnixUser = Read-Host "Choose the WSL username"
 
+    Clear-Host
     Write-Host "============================================================"
     Write-Host "                     Initializing WSL..."
     Write-Host "============================================================"
@@ -72,6 +73,7 @@ function Install-Wsl {
 
     wsl --import "$WSLname" "$InstallPath" "$TarFile"
 
+    Clear-Host
     Write-Host "============================================================"
     Write-Host "                   Removing junk files..."
     Write-Host "============================================================"
@@ -79,6 +81,7 @@ function Install-Wsl {
     rm $InstallPath\wsl_distro.tar
     rm $InstallPath\Dockerfile
 
+    Clear-Host
     Write-Host "Done! Fedora WSL correctly installed."
     Write-Host ""
     Write-Host "============================================================" -ForegroundColor Red
@@ -93,6 +96,7 @@ function Set-Icon {
     $Wslname = Read-Host "How did you call the WSL?"
     $InstallPath = Read-Host "Where did you installed the WSL?"
 
+    Clear-Host
     Write-Host "============================================================"
     Write-Host "                    Setting Fedora icon..."
     Write-Host "============================================================"
@@ -104,6 +108,7 @@ function Set-Icon {
     $settings.profiles.list | % {if($_.name -eq "$WSLname"){Add-Member -InputObject $_ -MemberType NoteProperty -Name "icon" -Value "$InstallPath\fedora.ico" -Force}}
     $settings | ConvertTo-Json -depth 32| set-content $env:localappdata'\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
 
+    Clear-Host
     Write-Host "Done!"
     sleep 1
     Clear-Tmp
