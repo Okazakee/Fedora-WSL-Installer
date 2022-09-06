@@ -11,11 +11,12 @@ function Show-Menu
     Write-Host " /_/    \___/\__,_/\____/_/   \__,_/  " -ForegroundColor Cyan -NoNewline; Write-Host "  |__/|__//____/_____/  /_/_/ /_/____/\__/\__,_/_/_/\___/_/     v1.0"
     Write-Host ""
     Write-Host ""
-    Write-Host "                        This script lets you install Fedora as a WSL using Docker!"
+    Write-Host "                       This script lets you install Fedora as a WSL using Docker!"
     Write-Host ""
-    Write-Host "                            Remember to open Docker Desktop before installing!" -ForegroundColor Red
+    Write-Host "                           Remember to open Docker Desktop before installing!" -ForegroundColor Red
     Write-Host ""
-    Write-Host "                        For more info visit: https://github.com/Okazakee/Fedora-WSL-Installer"
+    Write-Host "                  For more info visit: https://github.com/Okazakee/Fedora-WSL-Installer"
+    Write-Host ""
     Write-Host ""
     Write-Host "1) Install Fedora WSL."
     Write-Host "2) Set the new WSL Windows Terminal profile icon to Fedora logo."
