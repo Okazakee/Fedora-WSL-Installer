@@ -1,4 +1,4 @@
-<# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/install_fedora_wsl.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
+<# one command install: (Invoke-webrequest -URI "https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1").Content | Out-File -FilePath $env:temp\script.ps1; iex $env:temp\script.ps1 #>
 <# TODO: ASK FOR PATH AGAIN IN ICON SET FUNCTION #>
 Clear-Host
 function Show-Menu
