@@ -150,6 +150,7 @@ function Choices{
             Choices
         }
     }
+}
 
 Show-Menu
 Choices
