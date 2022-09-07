@@ -9,7 +9,7 @@ I often use WSL to do stuff since I can't install Linux directly for reasons, an
 - Run `iex ((New-Object System.Net.WebClient).DownloadString('https://www.okazakee.dev/wsl-installer'))` in your powershell.
 - Choose an option from menu.
 
-<img src=".github/assets/wt.png" alt="img" align="right" width="750px">
+<img src=".github/assets/wt.png" alt="img" align="right" width="650px">
 
 ### Requirements
 
