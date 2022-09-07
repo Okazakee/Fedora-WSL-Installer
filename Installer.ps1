@@ -96,7 +96,7 @@ function Set-Icon {
     $InstallPath = Read-Host "Where did you installed the WSL?"
 
     <# TODO: TESTING stored variables BLOCK #>
-    $FileName = "$env:temp\vars"
+    <# $FileName = "$env:temp\vars"
     if (Test-Path $FileName) {
     Write-Host "FILE EXISTS"
     Remove-Item $FileName
@@ -105,7 +105,7 @@ function Set-Icon {
         Write-Host "FILE DOES NOT EXIST"
         $Wslname, $InstallPath | Out-File -FilePath $env:temp\vars
         sleep 2
-    }
+    } #>
     <# TODO: TESTING stored variables BLOCK #>
 
     Clear-Host
