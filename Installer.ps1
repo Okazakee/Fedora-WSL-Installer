@@ -1,4 +1,3 @@
-<# one command install: iex ((New-Object System.Net.WebClient).DownloadString('https://www.okazakee.dev/wsl-installer')) #>
 <# TODO: save variables in a file to be reused in icon setting function #>
 Clear-Host
 function Show-Menu {
