@@ -50,36 +50,30 @@ function Install-Wsl {
     Write-Host "                  Downloading Dockerfile..."
     Write-Host "============================================================"
 
-    $dockerURL = 'https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Dockerfile'
-    $dockerfiletmp = (Invoke-webrequest -URI $dockerURL).Content | Out-File -FilePath $InstallPath\Dockerfile
+    sleep 1
 
     Clear-Host
     Write-Host "============================================================"
     Write-Host "                Building docker container..."
     Write-Host "============================================================"
 
-    $ContainerName = "docker_to_wsl_$WSLname"
-    docker build -f $InstallPath\Dockerfile -t $ContainerName --build-arg UNIX_USER=$UnixUser --no-cache --progress plain .
+    sleep 1
 
     try {
-        docker run -it --name "$ContainerName" "$ContainerName"
-        $TarFile = Join-Path $InstallPath "wsl_distro.tar"
-        docker export -o "$TarFile" "$ContainerName"
+        sleep 1
     }
     finally {
-        docker rm "$ContainerName"
-        docker rmi "$ContainerName"
+        sleep 1
     }
 
-    wsl --import "$WSLname" "$InstallPath" "$TarFile"
+    sleep 1
 
     Clear-Host
     Write-Host "============================================================"
     Write-Host "                   Removing junk files..."
     Write-Host "============================================================"
 
-    rm $InstallPath\wsl_distro.tar
-    rm $InstallPath\Dockerfile
+    sleep 1
 
     Clear-Host
     Write-Host "============================================================" -ForegroundColor Red
@@ -87,6 +81,8 @@ function Install-Wsl {
     Write-Host ""
     Write-Host "REMEMBER TO RESTART WINDOWS TERMINAL BEFORE SETTING THE ICON" -ForegroundColor Red
     Write-Host "============================================================" -ForegroundColor Red
+
+    sleep 4
 
     Clear-Host
 }
@@ -101,12 +97,9 @@ function Set-Icon {
     Write-Host "                    Setting Fedora icon..."
     Write-Host "============================================================"
 
-    $icoURL = 'https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/fedora.ico'
-    Invoke-WebRequest -Uri $icoURL -OutFile $InstallPath\fedora.ico
+    sleep 1
 
-    $settings = Get-Content $env:localappdata'\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' -raw | ConvertFrom-Json
-    $settings.profiles.list | % {if($_.name -eq "$WSLname"){Add-Member -InputObject $_ -MemberType NoteProperty -Name "icon" -Value "$InstallPath\fedora.ico" -Force}}
-    $settings | ConvertTo-Json -depth 32| set-content $env:localappdata'\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
+    sleep 1
 
     Clear-Host
     Write-Host "============================================================"
@@ -114,7 +107,10 @@ function Set-Icon {
     Write-Host "============================================================"
 
     sleep 1
+
+    Clear-Host
 }
+
 
 function Choices{
     switch (Read-Host "Please make a selection")
