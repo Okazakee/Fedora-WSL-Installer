@@ -76,6 +76,7 @@ function Install-Wsl {
     Write-Host "Done! Fedora WSL correctly installed."
     Write-Host ""
     Write-Host "============================================================" -ForegroundColor Red
+    Write-Host "           Thank you for using my tool! -Okazakee"
     Write-Host "REMEMBER TO RESTART WINDOWS TERMINAL BEFORE SETTING THE ICON" -ForegroundColor Red
     Write-Host "============================================================" -ForegroundColor Red
 
