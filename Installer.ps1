@@ -112,7 +112,7 @@ Show-Menu
     } '2' {
         Set-Icon
     } 'q' {
-        return
+        Bye-Message
     } default {
         Write-Host "Please choose one of the given inputs!"
     }
