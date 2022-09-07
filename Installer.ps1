@@ -1,8 +1,7 @@
-<# one command install: iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Okazakee/Fedora-WSL-Installer/main/Installer.ps1')) #>
+<# one command install: iex ((New-Object System.Net.WebClient).DownloadString('https://www.okazakee.dev/wsl-installer')) #>
 <# TODO: save variables in a file to be reused in icon setting function #>
 Clear-Host
-function Show-Menu
-{
+function Show-Menu {
     Write-Host ""
     Write-Host "     ______         __                " -ForegroundColor Cyan -NoNewline; Write-Host "   _       _______ __       _            __        ____"
     Write-Host "    / ____/__  ____/ /___  _________ _" -ForegroundColor Cyan -NoNewline; Write-Host "  | |     / / ___// /      (_)___  _____/ /_____ _/ / /__  _____"
@@ -88,6 +87,7 @@ function Install-Wsl {
     Write-Host "REMEMBER TO RESTART WINDOWS TERMINAL BEFORE SETTING THE ICON" -ForegroundColor Red
     Write-Host "============================================================" -ForegroundColor Red
 
+    sleep 5
     Clear-Host
 }
 
@@ -95,6 +95,19 @@ function Set-Icon {
 
     $Wslname = Read-Host "How did you call the WSL?"
     $InstallPath = Read-Host "Where did you installed the WSL?"
+
+    <# TODO: TESTING stored variables BLOCK #>
+    $FileName = "$env:temp\vars"
+    if (Test-Path $FileName) {
+    Write-Host "FILE EXISTS"
+    Remove-Item $FileName
+    sleep 2
+    } else {
+        Write-Host "FILE DOES NOT EXIST"
+        $Wslname, $InstallPath | Out-File -FilePath $env:temp\vars
+        sleep 2
+    }
+    <# TODO: TESTING stored variables BLOCK #>
 
     Clear-Host
     Write-Host "============================================================"
@@ -113,7 +126,8 @@ function Set-Icon {
     Write-Host "                          Done!"
     Write-Host "============================================================"
 
-    sleep 1
+    sleep 2
+    Clear-Host
 }
 
 function Choices{
