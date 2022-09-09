@@ -26,3 +26,4 @@ I often use WSL to do stuff since I can't install Linux directly for reasons, an
 - Automatically set start menu shortcut for WSL.
 - Automatically check if Docker is running.
 - Store vars in tmp file, check if it exists before asking user.
+- Check if WSL is installed.
