@@ -1,3 +1,10 @@
+> **⚠️ Archived.** Two reasons this is no longer maintained:
+>
+> 1. When I built it, I didn't know the [Fedora Remix for WSL](https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL) existed — if you're looking for Fedora on WSL, just use that instead (also available on the Microsoft Store).
+> 2. I stopped using Windows entirely in 2024, so I can no longer test or support this project.
+>
+> Kept here for reference only.
+
 <h3 align="center"><img src=".github/assets/logo.png"></h3>
 
 ---
